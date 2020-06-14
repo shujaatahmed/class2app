@@ -22,11 +22,13 @@ jobs:
 
     # Runs a single command using the runners shell
     -  name: Setup Node.js environment
-       uses: actions/setup-node@v2-beta
+       uses: actions/setup-node@v1.4.2
        with:
           node-version: 12
     - name: npm/yarn/pnpm install
       uses: Jaid/action-npm-install@v1.2.4
+      with:
+        cmd:  install # npm install
         
     - name: creating build
       run: npm build
